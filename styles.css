@@ -1,0 +1,22 @@
+/* Configuramos el contenedor que tiene los productos */
+.galeria {
+    display: grid; /* Activamos el modo rejilla */
+    
+    /* LA LÍNEA MÁGICA: Cambiamos auto-fit por auto-fill por el reto del doc */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    
+    grid-gap: 20px; /* Espacio de 20px entre cada tarjeta */
+    padding: 20px;  /* Margen interno para que no toque los bordes */
+}
+
+/* Configuramos cómo se ve cada tarjetita de producto individual */
+.item {
+    background-color: #3498db; /* Color azul de fondo */
+    height: 200px;             /* Altura fija de 200px */
+    display: flex;             /* Centramos el número adentro */
+    align-items: center;
+    justify-content: center;
+    color: white;              /* Texto blanco */
+    font-size: 2rem;           /* Texto grande */
+    border-radius: 8px;        /* Bordes redondeados */
+}
