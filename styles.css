@@ -1,24 +1,49 @@
-
 .galeria {
-    display: grid; 
-    
-
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    
-    grid-gap: 20px; 
-    padding: 20px;  
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
 }
+
 .item {
-    background-color: #3498db;
-    height: 200px;           
-    display: flex;            
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: white;              
-    font-size: 2rem;
-    border-radius: 8px;       
-    
-} 
-img {
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.item img {
     width: 100%;
+    border-radius: 8px;
+}
+
+.item h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.item button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.item button:hover {
+    background-color: #2980b9;
 }
