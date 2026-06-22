@@ -1,22 +1,44 @@
-/* Configuramos el contenedor que tiene los productos */
+/* ==========================================================================
+   CONFIGURACIÓN GENERAL DE LA GALERÍA (REJILLA)
+   ========================================================================== */
 .galeria {
     display: grid; /* Activamos el modo rejilla */
     
-    /* LA LÍNEA MÁGICA: Cambiamos auto-fit por auto-fill por el reto del doc */
+    /* Ajusta las columnas automáticamente según el espacio de la pantalla */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
     
     grid-gap: 20px; /* Espacio de 20px entre cada tarjeta */
-    padding: 20px;  /* Margen interno para que no toque los bordes */
+    padding: 20px;  /* Margen interno para que no toque los bordes de la pantalla */
 }
 
-/* Configuramos cómo se ve cada tarjetita de producto individual */
+/* ==========================================================================
+   CONFIGURACIÓN DE CADA CONTENEDOR (CUADRADO AZUL)
+   ========================================================================== */
 .item {
     background-color: #3498db; /* Color azul de fondo */
     height: 200px;             /* Altura fija de 200px */
-    display: flex;             /* Centramos el número adentro */
+    position: relative;        
+    border-radius: 8px;        /* Bordes redondeados */
+    
+    /* ⚠️ CLAVE: Corta cualquier parte de la foto que intente salirse del cuadrado */
+    overflow: hidden; 
+    
+    /* Centrado de seguridad por si queda algún elemento suelto */
+    display: flex;             
     align-items: center;
     justify-content: center;
-    color: white;              /* Texto blanco */
-    font-size: 2rem;           /* Texto grande */
-    border-radius: 8px;        /* Bordes redondeados */
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN DE LAS FOTOS DE LAS TORTAS
+   ========================================================================== */
+.item img {
+    /* ⚠️ CLAVE: Obliga a la foto a medir exactamente el 100% del cuadrado azul */
+    width: 100%;
+    height: 100%;
+    
+    /* ⚠️ CLAVE: Adapta y recorta la foto para que llene el espacio sin deformarse */
+    object-fit: cover; 
+    
+    display: block; /* Quita espacios vacíos innecesarios debajo de la imagen */
 }
